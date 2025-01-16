@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="wireframe">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="response_message.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Americans Who Owe More than $10,000 in Credit Card Debt <br />
+        could be eligible for huge relief
+      </h1>
+      <div class="status">
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#75FB4C"
+          >
+            <path
+              d="M480-480Zm0 280q-116 0-198-82t-82-198q0-116 82-198t198-82q116 0 198 82t82 198q0 116-82 198t-198 82Zm0-80q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Z"
+            />
+          </svg> </span
+        ><span>Sarah is Online</span>
+      </div>
+    </header>
+    <div class="parent-container">
+      <div class="main-container">
+        <div id="greetings">
+          <div class="avatar bg-[#f3f4f6] p-2 mr-2 rounded-3xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#666666"
+            >
+              <path
+                d="M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z"
+              />
+            </svg>
+          </div>
+          <div class="chat-box">
+            <span
+              style="display: inline-block"
+              id="greetings-loader"
+              class="loading loading-dots loading-md"
+            ></span>
+            <h1 style="display: none" id="greetings-h1">Hi there 👋</h1>
+          </div>
+        </div>
+        <!--first question-->
+        <div id="first-question">
+          <div class="avatar bg-[#f3f4f6] p-2 mr-2 rounded-3xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#666666"
+            >
+              <path
+                d="M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z"
+              />
+            </svg>
+          </div>
+          <div class="chat-box">
+            <span
+              style="display: none"
+              id="first-question-loader"
+              class="loading loading-dots loading-md"
+            ></span>
+            <h1 style="display: none" id="first-question-h1">
+              Do you have more than $10,000 in credit card debt?
+            </h1>
+          </div>
+        </div>
+        <!--Yes No Button Container-->
+        <div class="yesno-container pl-12">
+          <div class="yesno">
+            <button style="display: none" id="yes">Yes</button>
+            <button style="display: none" id="no">No</button>
+          </div>
+          <p id="first-question-answer"></p>
+        </div>
+
+        <!--Second question-->
+        <div id="second-question">
+          <div class="avatar bg-[#f3f4f6] p-2 mr-2 rounded-3xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#666666"
+            >
+              <path
+                d="M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z"
+              />
+            </svg>
+          </div>
+          <div class="chat-box">
+            <span
+              style="display: none"
+              id="second-question-loader"
+              class="loading loading-dots loading-md"
+            ></span>
+            <h1 style="display: none" id="second-question-h1">
+              Do you have more than $10,000 in credit card debt?
+            </h1>
+          </div>
+        </div>
+        <div class="yesno-container pl-12">
+          <div class="yesno">
+            <button style="display: none" id="second-yes">Yes</button>
+            <button style="display: none" id="second-no">No</button>
+          </div>
+          <p id="second-question-answer"></p>
+        </div>
+
+        <div class="response-message-container" id="error-response-message">
+          <div id="header-message">
+            <h1>Base on Your Responses</h1>
+            <p>
+              Our debt relief program may not be the best fit for your current
+              situation. However, here are some alternatives that might help:
+            </p>
+          </div>
+          <div class="inside-box">
+            <ul>
+              <li>Review these <a href="">free benefits for your family</a></li>
+              <li>Claim your: <a href="">Personal Financial Guide</a></li>
+              <li><a href="">Find a higher paying job</a></li>
+            </ul>
+            <div class="timer-container">
+              <p>These resources are available for:</p>
+              <div class="timer">1:05</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-message-container" id="success-response-message">
+          <div id="success-header-message">
+            <h1>
+              Great News! You're a Great Fit For Our <br />
+              Program
+            </h1>
+            <p>
+              Based on your responses, we can help reduce your credit card debt
+              significantly. Imagine being free from overwhelming monthly
+              payments and finally getting the fresh start you deserve.
+            </p>
+          </div>
+          <div class="inside-box">
+            <h1>
+              🔥Tap The Button Below to Speak with a Debt Relief Specialist Now
+              🔥
+            </h1>
+            <div class="number-container">0000-0000-0000</div>
+            <div class="timer-container">
+              <p>Your Free Consultation Expires In:</p>
+              <div class="timer">1:05</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- greetings chat -->
+  </body>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="chat.js"></script>
+</html>
