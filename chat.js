@@ -27,6 +27,38 @@ var firstAnswer = document.getElementById("first-question-answer");
 var secondAnswer = document.getElementById("second-question-answer");
 var errorResponse = document.getElementById("error-response-message");
 var successResponse = document.getElementById("success-response-message");
+var timerElement = document.querySelector(".timer");
+
+let timerInterval;
+
+function startTimer(duration) {
+  let timeLeft = duration;
+  timerElement.style.display = "block"; // Show the timer
+  timerElement.innerHTML = formatTime(timeLeft); // Initialize the timer display
+
+  timerInterval = setInterval(function () {
+    timeLeft--;
+
+    // Update the display in MM:SS format
+    timerElement.innerHTML = formatTime(timeLeft);
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval); // Stop the timer
+      timerElement.innerHTML = "Expired";
+    }
+  }, 1000); // Update every second
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  timerElement.style.display = "none"; // Hide the timer
+}
+
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+}
 
 window.addEventListener("load", function () {
   // First, show the greeting
@@ -73,6 +105,7 @@ oneNo.addEventListener("click", function (e) {
 secondYes.addEventListener("click", function (e) {
   e.preventDefault();
   hideQuestionTwoYesNo();
+  stopTimer(); // Stop the timer when the question is answered
   secondAnswer.classList.add("answers");
   secondAnswer.innerHTML = "Yes";
   secondQuestionAnswer = true;
@@ -82,6 +115,7 @@ secondYes.addEventListener("click", function (e) {
 secondNo.addEventListener("click", function (e) {
   e.preventDefault();
   hideQuestionTwoYesNo();
+  stopTimer(); // Stop the timer when the question is answered
   secondAnswer.classList.add("answers");
   secondAnswer.innerHTML = "No";
   secondQuestionAnswer = false;
@@ -91,21 +125,24 @@ secondNo.addEventListener("click", function (e) {
 function checkAnswers() {
   if (secondQuestionAnswer === true && firstQuestionAnswer === true) {
     successResponse.style.display = "flex";
+    startTimer(240);
   } else if (firstQuestionAnswer === false && secondQuestionAnswer === false) {
     errorResponse.style.display = "flex";
+    startTimer(240);
   } else {
     errorResponse.style.display = "flex";
+    startTimer(240);
   }
 }
 
 function showNextQuestion() {
   secondQuestionLoader.style.display = "block";
 
-  // Hide the loader after 2 seconds
+  // Hide the loader after 2 seconds and show the next question
   setTimeout(function () {
     secondQuestionLoader.style.display = "none";
     questionTwo.style.display = "block";
-    showQuestionTwoYesNo();
+    showQuestionTwoYesNo(); // Start a 10-second timer for the second question
   }, 2000);
 }
 
